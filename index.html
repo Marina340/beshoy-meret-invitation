@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Meret &amp; Beshoy — Wedding Invitation</title>
+<meta name="description" content="Meret &amp; Beshoy cordially invite you to celebrate their wedding in Suez, Egypt." />
+<meta name="theme-color" content="#4E1B29" />
+
+<!-- Social share preview -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Meret &amp; Beshoy — Wedding Invitation" />
+<meta property="og:description" content="Cordially invites you · Suez, Egypt" />
+<meta property="og:image" content="assets/img/hero.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Lora:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="is-locked">
+
+<!-- ══════════ ENVELOPE / COVER ══════════ -->
+<div class="cover" id="cover">
+  <div class="petals petals--cover" id="coverPetals" aria-hidden="true"></div>
+  <div class="cover__panel">
+    <div class="cover__inner">
+      <span class="cover__badge" aria-hidden="true">&#9829;</span>
+      <p class="cover__kicker">The Wedding Of</p>
+      <h1 class="cover__names">
+        <span class="cover__name">Meret</span>
+        <span class="cover__amp">&amp;</span>
+        <span class="cover__name">Beshoy</span>
+      </h1>
+      <div class="rule"><span></span>&#10086;<span></span></div>
+      <p class="cover__date">October 1, 2026</p>
+      <p class="cover__note">Cordially Invites</p>
+      <button class="btn btn--open" id="openBtn" type="button">Open</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ FALLING PETALS ══════════ -->
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<!-- ══════════ MUSIC TOGGLE ══════════ -->
+<button class="music" id="musicBtn" type="button" aria-label="Toggle background music" hidden>
+  <svg class="music__icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M9 17.5V5.5l10-2v12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="6.6" cy="17.6" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <circle cx="16.6" cy="15.6" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <line class="music__slash" x1="3.5" y1="3.5" x2="20.5" y2="20.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+</button>
+<audio id="bgm" loop preload="none"></audio>
+
+<!-- ══════════ INVITATION ══════════ -->
+<main class="card" id="card">
+
+  <!-- Groom & bride, with the tilted photo pair -->
+  <section class="pair reveal">
+    <p class="pair__role">Groom</p>
+    <p class="pair__name">Beshoy</p>
+    <p class="pair__role">Bride</p>
+    <p class="pair__name">Meret</p>
+    <div class="frames">
+      <figure class="frame frame--a"><img src="assets/img/f1.jpg" alt="Beshoy and Meret" /></figure>
+      <figure class="frame frame--b"><img src="assets/img/f2.jpg" alt="Beshoy and Meret" /></figure>
+    </div>
+  </section>
+
+  <!-- Announcement -->
+  <section class="sec sec--quote">
+    <div class="ornament reveal">&#10086;</div>
+    <p class="quote reveal">Love brought us together.<br />Family and friends made this day complete.<br />Thank you for being part of our story and sharing<br />this beautiful celebration with us.<br />Here&rsquo;s to love, laughter, and happily ever after.<br />Meret &amp; Beshoy</p>
+  </section>
+
+  <!-- Full names -->
+  <section class="sec sec--tight" id="names">
+    <p class="fullname reveal">Beshoy Nashaat</p>
+    <p class="fullrole reveal">Groom</p>
+    <p class="fullamp reveal">&amp;</p>
+    <p class="fullname reveal">Meret Bekhet</p>
+    <p class="fullrole reveal">Bride</p>
+  </section>
+
+  <!-- Save the date — month calendar with the day marked -->
+  <section class="sec sec--tight" id="date">
+    <p class="eyebrow reveal">Save The Date</p>
+    <div class="datebox reveal">
+      <div class="datebox__cell"><span class="datebox__lbl">Thursday</span></div>
+      <div class="datebox__cell datebox__cell--big"><span class="datebox__num">1</span></div>
+      <div class="datebox__cell"><span class="datebox__lbl">October<br />2026</span></div>
+    </div>
+    <!-- Grid is generated from CONFIG.event.date in js/main.js -->
+    <div class="cal reveal" id="cal"></div>
+    <div class="actions reveal">
+      <button class="btn btn--ghost" id="calBtn" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Add To My Calendar</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Countdown -->
+  <section class="sec sec--band" id="countdown">
+    <p class="eyebrow eyebrow--light reveal">Counting Down To Our Day</p>
+    <div class="cd reveal">
+      <div class="cd__unit"><span class="cd__num" id="cdD">00</span><span class="cd__lbl">Days</span></div>
+      <div class="cd__sep">:</div>
+      <div class="cd__unit"><span class="cd__num" id="cdH">00</span><span class="cd__lbl">Hours</span></div>
+      <div class="cd__sep">:</div>
+      <div class="cd__unit"><span class="cd__num" id="cdM">00</span><span class="cd__lbl">Minutes</span></div>
+      <div class="cd__sep">:</div>
+      <div class="cd__unit"><span class="cd__num" id="cdS">00</span><span class="cd__lbl">Seconds</span></div>
+    </div>
+  </section>
+
+  <!-- Photo album — 3D coverflow -->
+  <section class="sec sec--gallery" id="gallery">
+    <h3 class="h-serif reveal">Photo Gallery</h3>
+    <div class="gal reveal">
+      <div class="gal__stage" id="galStage">
+        <figure class="gal__card"><img src="assets/img/g1.jpg" alt="Beshoy and Meret" loading="lazy" /></figure>
+        <figure class="gal__card"><img src="assets/img/g2.jpg" alt="Beshoy and Meret" loading="lazy" /></figure>
+        <figure class="gal__card"><img src="assets/img/g3.jpg" alt="Beshoy and Meret" loading="lazy" /></figure>
+        <figure class="gal__card"><img src="assets/img/g4.jpg" alt="Beshoy and Meret" loading="lazy" /></figure>
+        <figure class="gal__card"><img src="assets/img/g5.jpg" alt="Beshoy and Meret" loading="lazy" /></figure>
+        <figure class="gal__card"><img src="assets/img/g6.jpg" alt="Beshoy and Meret" loading="lazy" /></figure>
+      </div>
+      <button class="gal__nav gal__nav--prev" id="galPrev" type="button" aria-label="Previous photo">&lsaquo;</button>
+      <button class="gal__nav gal__nav--next" id="galNext" type="button" aria-label="Next photo">&rsaquo;</button>
+      <div class="gal__dots" id="galDots"></div>
+    </div>
+  </section>
+
+  <!-- Ceremony -->
+  <section class="sec" id="ceremony">
+    <p class="eyebrow reveal">The Ceremony</p>
+    <h3 class="h-serif reveal">Saint George Coptic Orthodox Church</h3>
+    <p class="place reveal">Faisal, Suez City<br />Suez Governorate, Egypt</p>
+    <p class="clock reveal">7:00 <span class="clock__m">PM</span></p>
+    <div class="mapframe reveal">
+      <iframe id="mapChurch" title="Saint George Coptic Orthodox Church, Suez" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+    <a class="maplink reveal" id="linkChurch" href="#" target="_blank" rel="noopener">Get Directions &#8599;</a>
+  </section>
+
+  <div class="divider reveal"><span></span>&#10022;<span></span></div>
+
+  <!-- Reception -->
+  <section class="sec" id="reception">
+    <p class="eyebrow reveal">The Reception</p>
+    <h3 class="h-serif reveal">Pyramids Hall</h3>
+    <p class="place reveal">Suez City<br />Suez Governorate, Egypt</p>
+    <div class="mapframe reveal">
+      <iframe id="mapHall" title="Pyramids Hall, Suez" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+    <a class="maplink reveal" id="linkHall" href="#" target="_blank" rel="noopener">Get Directions &#8599;</a>
+  </section>
+
+  <!-- Thank you -->
+  <section class="sec sec--thanks">
+    <div class="ornament reveal">&#10086;</div>
+    <p class="quote reveal">Thank you for being part of our story<br />and sharing this beautiful celebration with us.<br />Here&rsquo;s to love, laughter, and happily ever after.</p>
+    <h2 class="script script--sm reveal">Meret <span class="amp">&amp;</span> Beshoy</h2>
+  </section>
+
+  <footer class="foot">
+    <p>1 October 2026 &middot; Suez, Egypt</p>
+  </footer>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
